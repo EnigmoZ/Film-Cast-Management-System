@@ -1,19 +1,17 @@
 package Models;
 
-import java.sql.Date;
-
 public class Reviews {
     private int id;
     private int filmId;
     private int userId;
     private int rating;
     private String comment;
-    private int reviewDate;
+    private String reviewDate;
 
     public Reviews(){
 
     }
-    public Reviews(int id, int filmId, int userId,int rating,String comment,int reviewDate){
+    public Reviews(int id, int filmId, int userId,int rating,String comment,String reviewDate){
         this.id = id;
         this.filmId = filmId;
         this.userId = userId;
@@ -62,11 +60,11 @@ public class Reviews {
         this.comment = comment;
     }
 
-    public int getReviewDate() {
+    public String getReviewDate() {
         return reviewDate;
     }
 
-    public void setReviewDate(Date reviewDate) {
+    public void setReviewDate(String reviewDate) {
         this.reviewDate = reviewDate;
     }
 

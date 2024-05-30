@@ -3,16 +3,16 @@ package Models;
 public class Directors {
      private int id;
      private String name;
-     private String DATE;
+     private String dob;
      private String nationality;
 
      public Directors(){
 
      }
-     public Directors( int id,String name, String DATE, String nationality){
+     public Directors( int id,String name, String dob, String nationality){
          this.id = id;
          this.name = name;
-         this.DATE = DATE;
+         this.dob = dob;
          this.nationality = nationality;
 
      }
@@ -33,12 +33,12 @@ public class Directors {
         this.name = name;
     }
 
-    public String getDATE() {
-        return DATE;
+    public String getDob() {
+        return dob;
     }
 
-    public void setDATE(String DATE) {
-        this.DATE = DATE;
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
     public String getNationality() {
@@ -54,7 +54,7 @@ public class Directors {
         return "Directors{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", DATE='" + DATE + '\'' +
+                ", dob='" + dob + '\'' +
                 ", nationality='" + nationality + '\'' +
                 '}';
     }

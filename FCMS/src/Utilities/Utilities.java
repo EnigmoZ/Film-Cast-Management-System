@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Utilities {
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/employee_db";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/fcms";
     private static final String JDBC_USERNAME = "root";
     private static final String JDBC_PASSWORD = "root";
 
