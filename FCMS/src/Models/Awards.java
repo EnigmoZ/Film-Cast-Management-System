@@ -41,7 +41,7 @@ public class Awards {
         this.category = category;
     }
 
-    public String getYear() {
+    public int getYear() {
         return year;
     }
 
