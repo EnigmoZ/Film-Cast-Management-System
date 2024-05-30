@@ -32,7 +32,7 @@ public class AwardsDAO {
                 award.setId(rs.getInt("id"));
                 award.setName(rs.getString("name"));
                 award.setCategory(rs.getString("category"));
-                award.setYear(rs.getString("year"));
+                award.setYear((rs.getString("year")));
                 awards.add(award);
             }
         }
@@ -52,7 +52,7 @@ public class AwardsDAO {
                     award.setId(rs.getInt("id"));
                     award.setName(rs.getString("name"));
                     award.setCategory(rs.getString("Category"));
-                    award.setYear(rs.getString("year"));
+                    award.setYear((rs.getString("year")));
                 }
             }
 
