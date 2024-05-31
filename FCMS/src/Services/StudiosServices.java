@@ -25,11 +25,11 @@ public class StudiosServices {
     }
 
     public void updateStudio(Studios studio) throws SQLException {
-        studioDAO.updateStudio(studio);
+        studioDAO.updateStudios(studio);
     }
 
     public void deleteStudio(int studioId) throws SQLException {
-        studioDAO.deleteStudio(studioId);
+        studioDAO.deleteStudios(studioId);
     }
 
 

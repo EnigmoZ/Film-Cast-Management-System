@@ -28,4 +28,11 @@ public class FilmsServices {
         return filmDAO.getFilmsByGenre(genre);
     }
 
+    public void updateFilms(Films film) throws  SQLException{
+        filmDAO.updateFilms(film);
+    }
+
+    public void deleteFilms(int filmId) throws SQLException{
+        filmDAO.deleteFilms(filmId);
+    }
 }

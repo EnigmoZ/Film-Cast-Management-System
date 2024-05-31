@@ -43,13 +43,13 @@ public class UsersDAO {
         return users;
     }
 
-    public Users getUsersById(int id) throws SQLException {
-        String sql = "SELECT * FROM user WHERE id=?";
+    public Users searchUserByUsername(String username) throws SQLException {
+        String sql = "SELECT * FROM user WHERE username=?";
         Users user = null;
 
         try (Connection con = Utilities.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, id);
+            ps.setString(1, username);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     user = new Users();

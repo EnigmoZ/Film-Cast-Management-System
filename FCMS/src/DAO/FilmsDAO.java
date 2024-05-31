@@ -47,13 +47,36 @@ public class FilmsDAO {
         return films;
     }
 
-    public Films getFilmsById(int id) throws SQLException {
-        String sql = "SELECT * FROM film WHERE id=?";
+    public List<Films> getFilmsByGenre(String genre) throws SQLException {
+        List<Films> films = new ArrayList<>();
+        String sql = "SELECT * FROM film where genre = ?";
+
+        try (Connection con = Utilities.getConnection();
+            PreparedStatement ps = con.prepareStatement(sql)){
+            ps.setString(1, genre);
+            try(ResultSet rs = ps.executeQuery(sql)) {
+                while (rs.next()) {
+                    Films film = new Films();
+                    film.setId(rs.getInt("id"));
+                    film.setTitle(rs.getString("title"));
+                    film.setGenre(rs.getString("genre"));
+                    film.setRelease_year(rs.getInt("release_year"));
+                    film.setDirector_id(rs.getInt("director_id"));
+                    film.setStudio_id(rs.getInt("studio_id"));
+                    films.add(film);
+                }
+            }
+        }
+        return films;
+    }
+
+    public Films searchFilmByTitle(String title) throws SQLException {
+        String sql = "SELECT * FROM film WHERE title=?";
         Films film = null;
 
         try (Connection con = Utilities.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, id);
+            ps.setString(1, title);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     film = new Films();

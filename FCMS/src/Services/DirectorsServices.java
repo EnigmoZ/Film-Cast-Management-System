@@ -25,10 +25,10 @@ public class DirectorsServices {
     }
 
     public void updateDirector(Directors director) throws SQLException {
-        directorDAO.updateDirector(director);
+        directorDAO.updateDirectors(director);
     }
 
     public void deleteDirector(int directorId) throws SQLException {
-        directorDAO.deleteDirector(directorId);
+        directorDAO.deleteDirectors(directorId);
     }
 }

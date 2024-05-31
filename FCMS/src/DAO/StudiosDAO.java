@@ -41,13 +41,13 @@ public class StudiosDAO {
         return studios;
     }
 
-    public Studios getStudiosById(int id) throws SQLException {
-        String sql = "SELECT * FROM studio WHERE id=?";
+    public Studios searchStudioByName(String name) throws SQLException {
+        String sql = "SELECT * FROM studio WHERE name=?";
         Studios studio = null;
 
         try (Connection con = Utilities.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, id);
+            ps.setString(1, name);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     studio = new Studios();

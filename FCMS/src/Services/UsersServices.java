@@ -25,10 +25,10 @@ public class UsersServices {
     }
 
     public void updateUser(Users user) throws SQLException {
-        userDAO.updateUser(user);
+        userDAO.updateUsers(user);
     }
 
     public void deleteUser(int userId) throws SQLException {
-        userDAO.deleteUser(userId);
+        userDAO.deleteUsers(userId);
     }
 }
