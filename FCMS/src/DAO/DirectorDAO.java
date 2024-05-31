@@ -43,13 +43,13 @@ public class DirectorDAO {
         return directors;
     }
 
-    public Directors getDirectorsById(int id) throws SQLException {
+    public Directors searchDirectorByName(String name) throws SQLException {
         String sql = "SELECT * FROM director WHERE id=?";
         Directors director = null;
 
         try (Connection con = Utilities.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, id);
+            ps.setString(1, name);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     director = new Directors();

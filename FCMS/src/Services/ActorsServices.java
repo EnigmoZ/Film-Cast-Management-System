@@ -28,6 +28,9 @@ public class ActorsServices {
         return actorDAO.getActorsByNationality(nationality);
     }
 
+    public void updateActors(Actors actor) throws SQLException {
+        actorDAO.updateActors(actor);
+  
     public void updateActorNationality(int actorId, String nationality) throws SQLException {
         actorDAO.updateActorNationality(actorId, nationality);
     }

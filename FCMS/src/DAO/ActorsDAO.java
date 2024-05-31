@@ -39,13 +39,13 @@ public class ActorsDAO {
         return actors;
     }
 
-    public Actors getActorsById(int id) throws SQLException {
-        String sql = "SELECT * FROM actor WHERE id=?";
+    public Actors searchActorByName(String name) throws SQLException {
+        String sql = "SELECT * FROM actor WHERE name=?";
         Actors actor = null;
 
         try (Connection con = Utilities.getConnection();
              PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, id);
+            ps.setString(1, name);
             try (ResultSet rs = ps.executeQuery()) {
                 if (rs.next()) {
                     actor = new Actors();
@@ -58,6 +58,24 @@ public class ActorsDAO {
 
             return actor;
         }
+    }
+
+    public List<Actors> getActorsByNationality(String nationality) throws SQLException {
+        List<Actors> actors = new ArrayList<>();
+        String sql = "SELECT * FROM actor WHERE nationality=?";
+        try (Connection con = Utilities.getConnection();
+             PreparedStatement ps = con.prepareStatement(sql);
+             ResultSet rs = ps.executeQuery(sql)) {
+            while (rs.next()) {
+                Actors actor = new Actors();
+                actor.setId(rs.getInt("id"));
+                actor.setName(rs.getString("name"));
+                actor.setDob(rs.getString("dob"));
+                actor.setNationality(rs.getString("nationality"));
+                actors.add(actor);
+            }
+        }
+        return actors;
     }
 
     public void updateActors(Actors actor) throws SQLException {

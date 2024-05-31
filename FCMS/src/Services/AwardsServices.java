@@ -25,11 +25,11 @@ public class AwardsServices {
     }
 
     public void updateAward(Awards award) throws SQLException {
-        awardDAO.updateAward(award);
+        awardDAO.updateAwards(award);
     }
 
     public void deleteAward(int awardId) throws SQLException {
-        awardDAO.deleteAward(awardId);
+        awardDAO.deleteAwards(awardId);
     }
 
 
