@@ -30,4 +30,5 @@ public class ReviewsServices {
 
     public void deleteReview(int reviewId) throws SQLException {
         reviewDAO.deleteReviews(reviewId);
+    }
 }
