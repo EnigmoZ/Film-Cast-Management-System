@@ -30,15 +30,14 @@ public class ActorsServices {
 
     public void updateActors(Actors actor) throws SQLException {
         actorDAO.updateActors(actor);
-  
-    public void updateActorNationality(int actorId, String nationality) throws SQLException {
-        actorDAO.updateActorNationality(actorId, nationality);
     }
 
-    public void deleteActors(int actorId) throws SQLException {
-        actorDAO.deleteActors(actorId);
+//    public void updateActorNationality(int actorId, String nationality) throws SQLException {
+//        actorDAO.updateActorNationality(actorId, nationality);
+    //}
+        public void deleteActors ( int actorId) throws SQLException {
+            actorDAO.deleteActors(actorId);
+        }
+
     }
 
-
-
-}
