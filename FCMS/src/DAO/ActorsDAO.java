@@ -79,13 +79,13 @@ public class ActorsDAO {
     }
 
     public void updateActors(Actors actor) throws SQLException {
-        String sql = "UPDATE actor SET name = ?, department = ?, salary = ? WHERE id = ?";
+        String sql = "UPDATE actor SET name = ?, nationality = ?, dob = ? WHERE id = ?";
 
         try (Connection conn = Utilities.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, actor.getName());
-            ps.setString(2, actor.getDob());
-            ps.setString(3, actor.getNationality());
+            ps.setString(2, actor.getNationality());
+            ps.setString(3, actor.getDob());
             ps.setInt(4, actor.getId());
             ps.executeUpdate();
         }

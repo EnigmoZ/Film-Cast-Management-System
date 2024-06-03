@@ -64,26 +64,6 @@ public class RolesDAO {
         return roles;
     }
 
-    public Roles getRolesById(int id) throws SQLException {
-        String sql = "SELECT * FROM role WHERE id=?";
-        Roles role = null;
-
-        try (Connection con = Utilities.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.setInt(1, id);
-            try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) {
-                    role = new Roles();
-                    role.setId(rs.getInt("id"));
-                    role.setFilm_id(rs.getInt("filmid"));
-                    role.setActor_id(rs.getInt("actorid"));
-                    role.setRole_name(rs.getString("rolename"));
-                }
-            }
-
-            return role;
-        }
-    }
 
     public void updateRoles(Roles role) throws SQLException {
         String sql = "UPDATE role SET filmid = ?, actorid = ?, rolename = ? WHERE id = ?";

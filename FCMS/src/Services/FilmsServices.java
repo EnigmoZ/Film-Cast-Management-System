@@ -24,9 +24,9 @@ public class FilmsServices {
         return filmDAO.searchFilmByTitle(title);
     }
 
-    public List<Films> getFilmsByGenre(String genre) throws SQLException {
-        return filmDAO.getFilmsByGenre(genre);
-    }
+//    public List<Films> getFilmsByGenre(String genre) throws SQLException {
+//        return filmDAO.getFilmsByGenre(genre);
+//    }
 
     public void updateFilms(Films film) throws  SQLException{
         filmDAO.updateFilms(film);

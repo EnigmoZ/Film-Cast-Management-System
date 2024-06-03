@@ -80,7 +80,7 @@ public class ReviewsDAO {
             ps.setInt(3, review.getRating());
             ps.setString(4, review.getComment());
             ps.setString(5, review.getReviewDate());
-            ps.setInt(4, review.getId());
+            ps.setInt(6, review.getId());
             ps.executeUpdate();
         }
     }
